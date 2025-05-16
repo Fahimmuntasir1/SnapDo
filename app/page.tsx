@@ -1,10 +1,8 @@
 import React from 'react'
-import Home from './home/page'
 
 export default function Main() {
   return (
-    <div className="">
-    <Home/>
+    <div className="h-screen">
     </div>
   )
 }

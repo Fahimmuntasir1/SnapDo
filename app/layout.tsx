@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div>
+          <h1 className="text-4xl font-bold text-center text-blue-600 shadow-sm my-2 py-4">
+            SnapDo
+          </h1>
+        </div>
+        <div>
+          <ul className="flex justify-center text-lg max-w-4xl m-auto rounded-2xl">
+            <li className="flex-1 cursor-pointer bg-green-100 p-3 text-center hover:bg-green-600 hover:text-white">
+              <Link href="/today" className="w-full block">Today</Link>
+            </li>
+            <li className="flex-1 cursor-pointer bg-green-100 p-3 text-center hover:bg-green-600 hover:text-white border-x border-gray-400">
+              <Link href="/pending" className="w-full block">Pending</Link>
+            </li>
+            <li className="flex-1 cursor-pointer bg-green-100 p-3 text-center hover:bg-green-600 hover:text-white">
+              <Link href="/done" className="w-full block">Done</Link>
+            </li>
+          </ul>
+        </div>
         {children}
       </body>
     </html>
